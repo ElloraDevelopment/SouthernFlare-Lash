@@ -1,5 +1,6 @@
 const express = require('express');
 let authRouter = express.Router();
+authRouter.use((req, res, next) => {console.log("test"); next ();});
 
 //connect/express middleware that validates a JsonWebToken (JWT) and sets the req.user with attributes
 let expressJwt = require('express-jwt');
@@ -25,7 +26,7 @@ let passport = require('passport');
 let Strategy = require('passport-local');
 
 //for tokens
-let jwt = require('JsonWebToken');
+let jwt = require('jsonwebtoken');
 
 //done is passport specific - like a true/false
 passport.use(new Strategy((username, password, done) => {
@@ -56,9 +57,11 @@ authRouter.use(passport.initialize());
 
 //login as a user
 authRouter.post('/login', passport.authenticate('local', {session: false}), (req, res) => {
+  // console.log('here');
   User.findOne({
     username: req.body.username
   }, (err, data) => {
+    // console.log("here 2");
     if(err) {
       res.status(500).send({'message':'Error', err});
     } else if (data === null) {
@@ -72,7 +75,7 @@ authRouter.post('/login', passport.authenticate('local', {session: false}), (req
         "message":"Success, Authorization token issued",
         "token": jwt.sign(payload, settings.secret, {
           //set to expire in 24 hours: 60 * 60 * 24
-          expiresIn: 30 * 60
+          expiresIn: 30 * 60 * 2
         }),
         "priv": data.priv
       });

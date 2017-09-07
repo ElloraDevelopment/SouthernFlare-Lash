@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 //*******************************
 //*******APP.USE ROUTERS*********
 //*******************************
-app.use('/auth', authRouter)
+app.use('/auth', authRouter);
 
 
 app.listen(PORT, () => {

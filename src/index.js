@@ -6,6 +6,7 @@ import NavbarContainer from "./containers/navbar-container.js";
 import Footer from "./components/footer.js";
 import ContactUsContainer from "./containers/contact-us-container.js";
 import Brand from "./components/brand.js";
+import AuthComponent from "./authentication/auth.js";
 
 //router
 import {BrowserRouter, Route, Switch} from "react-router-dom";
@@ -28,12 +29,13 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <NavbarContainer/>
+                <NavbarContainer />
                 <div className="container-fluid">
                     <Brand />
-                    <ContactUsContainer/>
+                    <ContactUsContainer />
                 </div>
-                <Footer/>
+                <AuthComponent />
+                <Footer />
             </div>
         );
     }

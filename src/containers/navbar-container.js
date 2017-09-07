@@ -25,12 +25,17 @@ let myLinks = [
     text: "CONTACT US",
     link: "#contact",
     to: "/contact"
+  },
+  {
+    text: "LOGIN",
+    link: "#login",
+    to: "/login"
   }
  ];
 let brand = "Sothern Flare Lash"
         return (
             <div>
-               <CustomNavbar brand={brand} links={myLinks}/> 
+               <CustomNavbar brand={brand} links={myLinks}/>
             </div>
         );
     }

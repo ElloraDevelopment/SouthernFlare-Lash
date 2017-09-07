@@ -24,3 +24,5 @@ userSchema.pre("save", function(next) {
   this.password = bcrypt.hashSync(this.password + this.username, salt);
   next();
 });
+
+module.exports = mongoose.model("userque", userSchema);

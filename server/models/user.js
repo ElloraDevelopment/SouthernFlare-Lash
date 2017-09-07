@@ -1,6 +1,6 @@
-let mongoose = require('mongoose');
-let bcrypt = require('bcrypt');
-let salt = bcrypt.genSaltSync(10);
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const salt = bcrypt.genSaltSync(10);
 let Schema = mongoose.Schema;
 
 let userSchema = new Schema ({
@@ -26,7 +26,7 @@ userSchema.methods.auth = function(passwordAttempt, cb) {
       console.log(err);
       cb(false);
     } else if (result) {
-      cb(true);
+      cb (true);
     } else {
       cb(false);
     }
