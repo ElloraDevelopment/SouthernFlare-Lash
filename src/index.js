@@ -3,8 +3,12 @@ import ReactDOM from "react-dom";
 
 import "./index.css";
 import AuthComponent from "./authentication/auth.js";
+<<<<<<< HEAD
 import Home from "./landing/home.js";
 import Contact from "./contact.js";
+=======
+import CmsContainer from "./cms/cms.js";
+>>>>>>> cms
 
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 
@@ -21,6 +25,7 @@ class App extends React.Component {
             <div>
 
                 <AuthComponent />
+<<<<<<< HEAD
                 <BrowserRouter>
                     <Switch>
                         <Route exact path="/" component={Home} />
@@ -28,10 +33,19 @@ class App extends React.Component {
                     </Switch>
                 </BrowserRouter>
             
+=======
+                <CmsContainer />
+                <Footer />
+>>>>>>> cms
             </div>
         );
     }
 }
 
+<<<<<<< HEAD
 
 ReactDOM.render(<Provider store={store}><App/></Provider>, document.querySelector("#root"));
+=======
+//give it to the app through provider
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.querySelector("#root"));
+>>>>>>> cms
