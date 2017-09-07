@@ -7,6 +7,7 @@ import Footer from "./components/footer.js";
 import ContactUsContainer from "./containers/contact-us-container.js";
 import Brand from "./components/brand.js";
 import AuthComponent from "./authentication/auth.js";
+import CmsContainer from "./cms/cms.js";
 
 //router
 import {BrowserRouter, Route, Switch} from "react-router-dom";
@@ -35,6 +36,7 @@ class App extends React.Component {
                     <ContactUsContainer />
                 </div>
                 <AuthComponent />
+                <CmsContainer />
                 <Footer />
             </div>
         );
@@ -42,5 +44,4 @@ class App extends React.Component {
 }
 
 //give it to the app through provider
-ReactDOM.render(
-    <Provider store={store}><App/></Provider>, document.querySelector("#root"));
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.querySelector("#root"));

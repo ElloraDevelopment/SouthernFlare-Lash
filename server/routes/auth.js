@@ -1,6 +1,6 @@
 const express = require('express');
 let authRouter = express.Router();
-authRouter.use((req, res, next) => {console.log("test"); next ();});
+// authRouter.use((req, res, next) => {console.log("test"); next ();});
 
 //connect/express middleware that validates a JsonWebToken (JWT) and sets the req.user with attributes
 let expressJwt = require('express-jwt');
