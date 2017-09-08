@@ -32,7 +32,7 @@ let myLinks = [
     to: "/login"
   }
  ];
-let brand = "Sothern Flare Lash"
+let brand = "Southern Flare Lash"
         return (
             <div>
                <CustomNavbar brand={brand} links={myLinks}/>
